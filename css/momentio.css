@@ -1,0 +1,741 @@
+/*Global Rules ++start++*/
+@font-face {
+    font-family: "Questrial";
+    src: url(../Questrial\ Font/Questrial-Regular.ttf) format("truetype");
+}
+
+:root {
+    --main-color: #202835;
+    --transparent-color: rgb(32 40 53 / 30%);
+    --orange: #fb6816;
+    --dark-grey: #44495e;
+    --grey: #cfd4d5;
+    --main-gap: 20px;
+    --main-transition: 0.3s;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: "Questrial", sans-serif;
+    margin: 0;
+}
+
+/*Global Rules --end--*/
+/* Component ++start++ */
+.c-orange {
+    color: var(--orange);
+}
+
+.bg-main-color {
+    background-color: var(--main-color);
+}
+
+.web-section {
+    border-top: 3px solid var(--orange);
+    border-bottom: 3px solid var(--orange);
+}
+
+.border-c-orange {
+    border-color: var(--orange) !important;
+}
+
+.twitter-icon,
+.linkedin-icon,
+.facebook-icon,
+.youtube-icon {
+    transition: var(--main-transition);
+}
+
+.twitter-icon:hover {
+    color: #1da1f2 !important;
+}
+
+.facebook-icon:hover {
+    color: #1877f2 !important;
+}
+
+.youtube-icon:hover {
+    color: #ff0000 !important;
+}
+
+.linkedin-icon:hover {
+    color: #0a66c2 !important;
+}
+
+@keyframes change-image {
+
+    0%,
+    40%,
+    100% {
+        background-image: url("../images/landing-02.jpg");
+    }
+
+    50%,
+    90% {
+        background-image: url("../images/landing-01.jpg");
+    }
+
+}
+
+/* Component --end-- */
+/* Navbar ++start++ */
+nav {
+    height: 84px;
+    max-width: 100vw;
+    background-color: var(--transparent-color);
+}
+
+nav .burger-icon {
+    color: white;
+    transition: var(--main-transition);
+}
+
+.burger-icon:hover {
+    color: var(--orange);
+}
+
+/* Navbar --end-- */
+/* "Dorp menu"  aside ++start++ */
+aside .content {
+    background-color: var(--main-color);
+    top: -200vh;
+    width: 100vw;
+    transition: .5s;
+}
+
+aside .content .header img {
+    height: 70px;
+}
+
+aside .content .header::after,
+aside .content .socials::after {
+    content: "";
+    position: absolute;
+    width: 60%;
+    height: 2px;
+    background-color: var(--dark-grey);
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+}
+
+aside .content .socials::after {
+    top: 0;
+}
+
+aside .aside-close {
+    padding: 10px;
+    transition: var(--main-transition);
+}
+
+aside .aside-close:hover {
+    transform: scale(1.2);
+}
+
+.aside-links a {
+    display: block;
+    color: var(--grey);
+    transition: var(--main-transition);
+}
+
+.aside-links a:hover {
+    color: var(--orange);
+    font-weight: bold;
+    background-color: var(--dark-grey);
+}
+
+.aside-links a::after {
+    content: ">";
+    position: absolute;
+    right: 25%;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--orange);
+    transition: var(--main-transition);
+    opacity: 0;
+}
+
+.aside-links a::before {
+    content: "<";
+    position: absolute;
+    left: 25%;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--orange);
+    transition: var(--main-transition);
+    opacity: 0;
+}
+
+.aside-links a:hover::before {
+    left: 5%;
+    opacity: 1;
+}
+
+.aside-links a:hover::after {
+    right: 5%;
+    opacity: 1;
+}
+
+/* "Dorp menu"  aside --end-- */
+/* Landing ++strat++ */
+.landing {
+    height: 100vh;
+    background-image: url("../images/landing-02.jpg");
+    background-size: cover;
+    animation: change-image 20s linear infinite;
+}
+
+.landing .text {
+    background-color: var(--transparent-color);
+    width: fit-content;
+}
+
+@media (max-width: 767px) {
+    .landing .text {
+        padding: 0 !important;
+    }
+}
+
+.landing h1::after {
+    content: "";
+    width: 60%;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--grey);
+}
+
+.landing-button {
+    background-color: var(--orange);
+    color: white;
+    transition: var(--main-transition);
+    border-radius: 6px;
+    box-shadow: 0px 1px 0px 0px #d65008;
+}
+
+.landing-button:hover {
+    color: var(--grey);
+    background-color: #d65008;
+}
+
+/* Landing --end-- */
+/* Info ++start++ */
+.info-section h2 {
+    color: var(--main-color);
+    position: relative;
+}
+
+.info-section h2::after {
+    content: "";
+    width: 40%;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--orange);
+}
+
+.info-section p:first-of-type {
+    color: var(--main-color);
+}
+
+.info-section p:first-of-type>span {
+    color: var(--orange);
+}
+
+.info-section .slogan {
+    letter-spacing: 1.2px;
+}
+
+/* Info --end-- */
+/* Services ++start++ */
+.services .serv-icon {
+    height: 80px;
+    width: 80px;
+    background-color: var(--main-color);
+}
+
+.services .box1,
+.services .box2 {
+    position: relative;
+}
+
+.services .box1::before,
+.services .box1::after,
+.services .box2::before,
+.services .box2::after {
+    content: "";
+    position: absolute;
+    background-color: var(--orange);
+}
+
+.services .box1::before {
+    height: 85%;
+    width: 1px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.services .box1::after {
+    width: 95%;
+    height: 1px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.services .box2::before {
+    height: 1px;
+    width: 95%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.services .box2::after {
+    width: 1px;
+    height: 85%;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+@media (max-width:766px) {
+    .services .box1::before {
+        width: 95%;
+        height: 1px;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .services .box2::before {
+        top: 100%
+    }
+
+    .services .box2::after {
+        display: none;
+    }
+}
+
+/* Services --end-- */
+/* Quote ++start++*/
+.quote-section {
+    background-attachment: fixed;
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    position: relative;
+    background-image: url(../images/quote.jpg);
+    width: 100%;
+}
+
+.quote-section::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(32 40 53 / 90%);
+}
+
+.quote-pattern {
+    position: relative;
+    width: 40%;
+    height: 10px;
+    background: url(../images/pattern.png);
+}
+
+/* Quote --end-- */
+/* Work-Section ++start++ */
+.work-section .box {
+    transition: var(--main-transition);
+}
+
+.work-section .box:hover {
+    background-color: var(--orange);
+}
+
+.work-section .box>span {
+    font-family: Arial, Helvetica, sans-serif;
+    top: -1.8rem;
+    left: -1.2rem;
+    display: block;
+    margin-bottom: -1.8rem;
+}
+
+@media (max-width:767px) {
+    .work-section .box>span {
+        top: -1.4rem;
+        left: -0.8rem;
+        margin-bottom: -1.4rem;
+    }
+}
+
+@media (max-width:576px) {
+    .work-section .box>span {
+        top: -1.2rem;
+        left: -0.6rem;
+        margin-bottom: -1.2rem;
+    }
+}
+
+/* Work-Section --end-- */
+/* Portfolio ++start++ */
+.portfolio .mask {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    transition: var(--main-transition);
+}
+
+.portfolio .mask:hover {
+    background-color: rgb(251 104 22 / 80%);
+}
+
+.portfolio .mask-icon {
+    position: absolute;
+    transition: var(--main-transition);
+}
+
+.portfolio .mask-icon:first-of-type {
+    left: 40%;
+    top: -120%;
+    transform: translate(-50%, -50%);
+}
+
+.portfolio .mask-icon:last-of-type {
+    right: 40%;
+    bottom: -120%;
+    transform: translate(50%, 50%);
+}
+
+.portfolio .mask:hover .mask-icon:first-of-type {
+    top: 50%;
+}
+
+.portfolio .mask:hover .mask-icon:last-of-type {
+    bottom: 50%;
+}
+
+.portfolio .bullet {
+    width: 10px;
+    height: 10px;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    margin: 0 8px;
+    transition: var(--main-transition);
+}
+
+.portfolio .bullet.active,
+.portfolio .bullet:hover {
+    background-color: var(--orange);
+}
+
+/* Portfolio --end-- */
+/* Infographics ++start++ */
+.infographics {
+    background: #202835 url(../images/graph.png) no-repeat center center;
+    border-top: 3px solid #FB6816;
+    background-size: cover;
+    height: 100vh;
+}
+
+.infographics .browsers {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+/* Infographics --end-- */
+/* About-Us ++start++ */
+.member-card {
+    display: none;
+    transition: 20s;
+}
+
+.member-card.active {
+    display: flex;
+}
+
+.member-head::after {
+    content: "";
+    width: calc(50vw - 1.6rem);
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: var(--main-color);
+    border-top: 4px solid var(--orange);
+    z-index: -1;
+}
+
+@media (max-width: 767px) {
+    .member-head::after {
+        width: 100%;
+    }
+}
+
+.member-name {
+    line-height: 1.8rem
+}
+
+.select-box {
+    overflow: hidden;
+    border-top: 2px solid var(--main-color);
+    transition: var(--main-transition);
+    cursor: pointer;
+}
+
+.select-box:hover {
+    border-top-color: var(--orange);
+}
+
+.about-us .mask {
+    left: -100%;
+    transition: var(--main-transition);
+    background-color: rgb(32 40 53 / 50%);
+}
+
+.about-us .select-box:hover .mask {
+    left: 0;
+}
+
+/* About-Us --end-- */
+/* Skills ++start++ */
+.circular-prog {
+    box-sizing: content-box !important;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 40px;
+    border-radius: 50%;
+    border: 10px solid var(--main-color);
+}
+
+.circular-prog .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 400;
+}
+
+.circular-prog .left-cover,
+.circular-prog .right-cover {
+    position: absolute;
+    width: 60px;
+    height: 120px;
+    top: -10px;
+    overflow: hidden;
+    background-color: transparent;
+    z-index: 2;
+}
+
+.circular-prog .left-cover {
+    left: -10px;
+}
+
+.circular-prog .right-cover {
+    right: -10px;
+}
+
+.circular-prog .left-prog,
+.circular-prog .right-prog {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    top: 0;
+    border-radius: 50%;
+    border: 10px solid grey;
+    transform: rotate(45deg);
+    z-index: 2;
+}
+
+.circular-prog .left-prog {
+    left: 0;
+    border-color: var(--orange) var(--orange) transparent transparent;
+    transition: 0.3s linear;
+}
+
+.circular-prog .right-prog {
+    right: 0;
+    border-color: transparent transparent var(--orange) var(--orange);
+    transition: 0.2s 0.3s linear;
+}
+
+/* Skills --end-- */
+/* Seond-Quote ++start++ */
+.second-quote {
+    background-color: var(--orange);
+}
+
+.second-quote p::before {
+    content: "";
+    width: 2rem;
+    height: 1.8rem;
+    background-image: url(../images/quote-mark.png);
+    position: absolute;
+    top: 0;
+    left: -2.8rem;
+}
+
+.second-quote p::after {
+    content: "";
+    width: 2rem;
+    height: 1.8rem;
+    background-image: url(../images/quote-mark.png);
+    position: absolute;
+    bottom: 0;
+    right: -2.8rem;
+    transform: rotate(180deg);
+}
+
+/* Seond-Quote --end-- */
+/* Clients ++start++ */
+.clients-section {
+    position: relative;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    background-image: url(../images/quote.jpg);
+    background-attachment: fixed;
+}
+
+.clients-section::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgb(32 40 53 / 90%);
+}
+
+.clients-section img {
+    transition: var(--main-transition);
+}
+
+.clients-section img:not(:hover) {
+    filter: grayscale(1);
+}
+
+/* Clients --end-- */
+/* Prices ++start++ */
+.prices .price-box {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.prices .box-head {
+    background-color: var(--main-color);
+    border-bottom: 3px solid var(--orange);
+}
+
+.prices .box-head h4::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 1px;
+    background-color: var(--grey);
+}
+
+.prices .price-currency {
+    left: -.6rem;
+}
+
+/* Prices --end-- */
+/* Contact-Us ++start++ */
+.contact-us img {
+    position: absolute;
+    right: 10%;
+    bottom: 0;
+}
+
+.contact-us input[type="email"] {
+    width: calc(80% - 1rem);
+    background-color: transparent;
+    border: 1px solid white;
+    outline: none;
+    border-radius: 4px;
+    height: 100%;
+    color: white;
+    caret-color: var(--orange);
+}
+
+.contact-us input[type="email"]::placeholder {
+    color: white;
+    transition: var(--main-transition);
+}
+
+.contact-us input[type="email"]:focus::placeholder {
+    opacity: 0;
+}
+
+.contact-us input[type="submit"] {
+    background-color: var(--orange);
+    color: white;
+    border-radius: 4px;
+    padding: .2rem .4rem;
+    outline: none;
+    border: none;
+    transition: var(--main-transition);
+}
+
+.contact-us input[type="submit"]:hover {
+    color: var(--grey);
+    background-color: #d65008;
+}
+
+/* Contact-Us --end-- */
+/* Office ++start++ */
+.office-section {
+    border-width: 3px !important;
+}
+
+.office-section .add-info {
+    padding-left: 20vw !important;
+}
+
+.office-section .mail {
+    transition: var(--main-transition);
+}
+
+.office-section .mail:hover {
+    color: var(--orange) !important;
+}
+
+/* Office --end-- */
+/* Footer ++start++ */
+.footer .back-name {
+    line-height: 1rem;
+    font-size: 10vw;
+}
+
+@media (max-width:991px) {
+    .footer .back-name {
+        font-size: 12vw;
+    }
+}
+
+@media (max-width:767px) {
+    .footer .back-name {
+        font-size: 14vw;
+    }
+}
+
+/* Footer --end-- */
